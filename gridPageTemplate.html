@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Construction company</title>
+      <!-- Meta tags for SEO and social sharing -->
+      <meta name="robots" content="index,follow" />
+      <meta property="og:title" content="construction-company!" />
+      <meta property="og:type" content="web-page" />
+      <meta property="og:url" content="https://construction-company.glitch.me/" />
+      <meta
+        property="og:description"
+        content="Your-reliable-partner-construction-company" />
+      <meta property="og:image" content="Here-need-to-be-image-url-address" />
+      <meta name="twitter:card" content="summary" />
+      <!-- Import the webpage's stylesheet -->
+    <!--
+      <link rel="stylesheet" href="https://building-company.glitch.me/index-izgled.css" />    
+    -->  
+  <style>
+      /*
+      .gridContainer {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(4, 25%);
+      }
+      
+      .item-1 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start:1 ;
+        grid-column-end: 3;
+        background-color: brown;
+      }
+      
+      .item-2 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 3;
+        grid-column-end: 5;
+        background-color: yellow;
+      }
+      */
+         
+      .gridContainer {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+          "header"
+          "sidebar"
+          "content"
+          "footer";
+      }
+      
+       .header {
+        background-color: gray;
+        grid-area: header;
+      }
+      
+      .sidebar {
+        background-color: yellow;
+        grid-area: sidebar;
+      }
+      
+      .content {
+        background-color: brown;
+        grid-area: content;
+      }
+      
+      .footer {
+        background-color: green;
+        grid-area: footer;
+      }
+    
+    @media screen and (min-width: 600px){      
+      .gridContainer {
+        display: grid;
+        grid-template-rows: 180px auto 150px;
+        grid-template-columns: 40% auto;
+        grid-template-areas:
+          "header header"
+          "sidebar content"
+          "footer footer";
+      }
+    }
+    
+    </style>
+  </head>
+  <body>
+
+    <div class="gridContainer">
+      <div class="header">header</div>
+      <div class="sidebar">sidebar</div>
+      <div class="content">content</div>
+      <div class="footer">footer</div>
+    </div>
+
+  </body>
+</html>
+
