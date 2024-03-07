@@ -1,0 +1,534 @@
+/******************************************************************************
+START Glitch hello-app default styles
+
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
+
+/* 
+  The style rules specify elements by type and by attributes such as class and ID
+  Each section indicates an element or elements, then lists the style properties to apply
+  See if you can cross-reference the rules in this file with the elements in index.html
+*/
+
+/* css selectors: "*" and "body" */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+body {
+  height: 100vh;
+  color: #752f05;
+}
+
+/* css selectors from h1 to h6, and p */
+h1 {
+  font-size: 2.2rem;
+  /*font-weight: ;*/
+}
+
+h2 {
+  font-size: 2rem;
+  /*font-weight: ;*/
+}
+
+h3 {
+  font-size: 1.8rem;
+  /*font-weight: ;*/
+}
+
+h4 {
+  font-size: 1.6rem;
+  /*font-weight: ;*/
+}
+
+h5 {
+  font-size: 1.4rem;
+  /*font-weight: ;*/
+}
+
+h6 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ae0f0f
+}
+
+.simple-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.simple-flex #logoCompan {
+  margin: 5px auto 5px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: #f7fbfb;
+  color: #752f05;
+  min-width: 90px;
+  max-width: 120px;
+  min-height: 80px;
+  max-height: 88px;
+  padding: 2px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px 8px 70px 70px;
+  border-top: 8px solid #44c0e8;
+  border-bottom: 1px solid red;
+  border-right: 2px solid red;
+  border-left: 2px solid red;
+} 
+
+.simple-flex div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.simple-flex div p {
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: 600;
+  font-style: oblique;
+  color: #752f05;
+ /* letter-space */
+}
+
+#for-nav-menu {  
+  position: relative;
+  /*nikako da z-index bude jednak ili veci od sledeceg dela
+  jer ce mu se donja ivica spustati nadole pri position:relative;*/
+}
+
+/* Dropdown Flexbox Menu */
+.nav-menu {
+  font-family: serif;  
+  position: relative;
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;  
+  border-top: 3.5px solid red;
+  border-bottom: 0px;
+}
+
+.nav-menu ul li {
+  width: 100%;
+}  
+
+.nav-menu ul li > ul {
+  display: none;  
+  border: 0px;
+}
+
+.nav-menu ul li > ul li {
+  width: 100%;
+}
+
+.nav-menu ul li:hover > ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #752f05;
+  background-color: lightblue;  
+}
+
+.nav-menu a {
+  display: block;
+  background-color: #44c0e8;
+  padding: 13px;
+  color: white;
+  font-weight: 550;
+  text-decoration: none;
+  text-align: center;
+  border-bottom: 3.5px solid red;
+  border-right: 1.75px solid white;
+  border-left: 1.75px solid white;
+}
+
+.nav-menu a:hover {
+  color: red;  
+  background-color: white;
+}
+
+.nav-menu .drop-navbar > ul > li {
+  z-index: 10; /*da bi se pojavilo pri hoveru preko sledeceg prostora koji je ispod
+  tj. id="part-1", a taj prostor se podesi na pozicioniranje fiksirano (position: fixed)
+  i top:- onoliko piksela koliko treba da bude od vrha stranice i left:-onoliko piksela koliko
+  treba da bude od leve ivice stranice*/
+}
+
+.nav-menu .drop-navbar > ul > li > a {
+  background-color: #5586d2;
+  color: white;  
+  z-index: 10; /*da bi se pojavilo pri hoveru preko sledeceg prostora koji je ispod
+  tj. id="part-1", a taj prostor se podesi na pozicioniranje fiksirano (position: fixed)
+  i top:- onoliko piksela koliko treba da bude od vrha stranice i left:-onoliko piksela koliko
+  treba da bude od leve ivice stranice*/
+}
+
+.nav-menu .drop-navbar > ul > li > a:hover {
+  color: red;
+  background-color: white;
+}
+
+.nav-menu .drop-navbar > a:after {
+  content: " +";
+  padding: 13px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  height: 40%;
+  width: 80%;
+  margin: auto;
+  background-color: #d2d2cd;
+}
+
+/*slike se same menjaju*/
+.mySlides {
+  position: relative;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: #d2d2cd;
+}
+    
+.slideshow-container .mySlides img {
+  display: block;
+  position: relative;
+  width: 70vw;
+  height: 27vh;
+  margin: 5px auto;
+}
+
+/* Caption text */
+.text {
+  display: flex;
+  margin: 10px auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  width: 30vw;
+  height: 6vh;
+  color: #2c46d0;
+  background-color:#c9cdd9;
+  font-size: 12px; 
+  font-weight: 550;
+}
+
+/* Number text (1/3 etc)*/ 
+.numbertext {
+  text-align: center;
+  margin: 1px auto;
+  color: #d8712c;
+  font-size: 20px;
+  padding: 3px auto;
+  position: relative;
+}
+
+/* The dots/bullets/indicators*/ 
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 5px auto;
+  background-color: #6f0404;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: violet;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/*text below nav menu i.e. after slideshow if it is home page*/
+#part-1 {
+  margin: 5px auto;
+  position: relative;
+}
+
+#part-1-div {
+  margin: 5px auto;
+}
+
+/*page: storm-restor*/
+ #gridContainer {
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+   z-index: 9;
+   display: grid;
+   grid-template-rows: auto;
+   grid-template-columns: 100%;
+   grid-gap: 5px;
+   grid-template-areas: 
+     "sidebar"
+     "imgCont"
+     "content";
+ }
+
+/*page storm-restor and roof-restor*/
+#imgCont-1 {
+  margin: 10px auto;
+  padding: 0px auto;
+  width: 60%;
+  text-align: center;
+  box-shadow: 0 3px 9px 0 rgba(157, 180, 138, 0.252), 0 7px 15px 0 rgba(164, 197, 142, 0.263);
+  background-color: lightgray;
+}
+
+#img-1 {
+  display: block;
+  margin: 10px 5px;
+  width: 99%;
+  text-align: center;
+  height: 99%;
+  box-shadow: 0 3px 9px 0 rgba(157, 180, 138, 0.252), 0 7px 15px 0 rgba(164, 197, 142, 0.263);
+}
+
+#img-1-label {
+  text-align: center; 
+  padding: 8px 15px;
+  background-color: rgb(172, 219, 204);
+}
+
+.decoratUl {
+  list-style-type: disc;
+}
+
+/* RESPONSIVENESS to adapt top in order to be centered on smaller screens*/  
+@media (min-width: 460px) {   
+  #part-1 {
+    margin: 5px auto;
+    position: relative;
+  }  
+}
+
+/*on bigger screens nav menu is as row, all under nav menu need to be
+with fixed position on precise distance from the top, nav button to be precise percent (e.g. 20%)*/
+@media (min-width: 738px) {  
+  /*nav menu*/ 
+  .nav-menu ul{
+    flex-direction: row;
+    z-index: 10; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko dela koji je ispod njega*/
+  }
+  
+  .nav-menu ul li {  
+    width: 20%;
+    z-index: 10; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko dela koji je ispod njega*/
+  }
+  
+  .nav-menu .drop-navbar > ul > li {
+  z-index: 10; /*da bi se pojavilo pri hoveru preko sledeceg prostora koji je ispod
+  tj. id="part-1", a taj prostor se podesi na pozicioniranje fiksirano (position: fixed)
+  i top:- onoliko piksela koliko treba da bude od vrha stranice i left:-onoliko piksela koliko
+  treba da bude od leve ivice stranice*/
+}
+
+.nav-menu .drop-navbar > ul > li > a {
+  z-index: 10; /*da bi se pojavilo pri hoveru preko sledeceg prostora koji je ispod
+  tj. id="part-1", a taj prostor se podesi na pozicioniranje fiksirano (position: fixed)
+  i top:- onoliko piksela koliko treba da bude od vrha stranice i left:-onoliko piksela koliko
+  treba da bude od leve ivice stranice*/
+}
+
+
+  /*page: home page, roof-restor*/
+  #part-1 {
+    position: fixed; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    top: 220px; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    left: 5px; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    z-index: 9; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+  }
+  
+  #part-1-introTitle {
+    position: fixed; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    top: 225px; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    left: 5px; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    z-index: 9; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    margin-left: 50px;  
+  }    
+  
+  /*slideshow-container*/
+  .slideshow-container {
+    position: fixed;
+    top: 290px;
+    left: 25%;
+    z-index: 9; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 30vh;
+  }
+  
+  .mySlides {
+    position: fixed;
+    top: 295px;
+    z-index: 9; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 30vh;    
+    align-self: center;
+  }
+  
+  .numbertext {
+    position: fixed;
+    top: 300px;
+    z-index: 9; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+  }
+  
+  .slideshow-container .mySlides img{
+    position: fixed;
+    top: 325px;
+    z-index: 9; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    width: 50vw;
+    height: 30vh;
+    align-self: center;
+  }
+  
+  .text {
+    position: fixed;
+    top: 570px;
+    z-index: 9; /*da bi se padajuci pod-nav-meni pri padanju pojavio preko njega*/
+    width: 50vw;
+    height: 35px;
+  }
+    
+  #dots {
+    position: fixed;
+    top: 620px;
+    left: 47.5%;   
+  }
+  
+  /*after nav menu*/  
+  #sectAfterNav {
+    position: fixed;
+    top: 200px;
+    left: 5px;
+    z-index: 9;
+  }
+
+  #mainAfterNav {
+    position: fixed;
+    top: 200px;
+    left: 5px;
+    z-index: 9;
+  }
+
+  /*Template of page with grid*/
+ .gridContainer {
+   position: fixed;
+   display: grid;
+   grid-template-rows: 70% 30%;
+   grid-template-columns: 35% 65%;
+   grid-template-areas:
+     "sidebar imgCont"
+     "sidebar content"      
+  }
+    
+  #sidebar {
+    position: fixed;
+    z-index: 9;
+    grid-area: sidebar;
+    background-color: #d2d2cd;  
+  }
+
+  #content {
+    position: fixed;
+    z-index: 9;
+    grid-area: content;
+    background-color: #c1cdd0;  
+    padding: 15px;
+  }
+
+   /*page storm-restor and some others*/    
+  #imgCont {
+    position: fixed;
+    top: 225px;
+    z-index: 9;
+    grid-area: imgCont;
+    padding: 0px;
+    background-color: #c6d1d5;
+  }
+
+  #imgCont img {
+    position: fixed;
+    top: 225px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 9;  
+    min-width: 279px;
+    max-width: 802px;
+    min-height: 209px;
+    max-height: 495px;  
+  }  
+    
+  #part-1-div {
+    position: fixed;
+    top: 680px;
+    left: 5px;
+    z-index: 9;
+    margin-left: 5px;
+  }
+  
+  #imgCont-1 {
+    position: fixed;
+    top: 220px;
+    left: 100px;
+    z-index: 9 !important;
+  }
+  
+  #img-1 {
+    position: fixed;
+    top: 225px;
+    left: 100px;
+    z-index: 9 !important;
+    margin-left: 10px;
+    margin-right: auto;
+    min-width: 279px;
+    max-width: 650px;
+    min-height: 209px;
+    max-height: 400px;
+  }
+}  
+  
